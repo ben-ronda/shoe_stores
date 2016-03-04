@@ -16,7 +16,9 @@ It was built using the following:
 1. Use `/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot` to access the MySQL Shell.
 2. `CREATE DATABASE shoes;`
 3. `USE shoes;`
-4. ``
+4. `CREATE TABLE stores (id serial PRIMARY KEY, name VARCHAR (100));`
+5. `CREATE TABLE brands (id serial PRIMARY KEY, name VARCHAR (100));`
+6. `CREATE TABLE brands_stores (id serial PRIMARY KEY, store_id INT, brand_id INT);`
 
 ***
 ## Installation:
