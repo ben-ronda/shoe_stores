@@ -91,21 +91,38 @@
             $this->assertEquals($new_name, $test_brand->getName());
         }
 
-        // function test_getStores(){
-        //     $brand_name = "Nike";
-        //     $test_brand = new Brand($brand_name);
-        //     $test_brand->save();
-        //
-        //     $store_name = "Foot Locker";
-        //     $test_store = new Store($store_name);
-        //     $test_store->save();
-        //
-        //     $store_name2 = "KOHLs";
-        //     $test_store2 = new Store($store_name2);
-        //     $test_store2->save();
-        //
-        //
-        //
-        // }
+        function test_addStore(){
+            $brand_name = "Nike";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $store_name = "Foot Locker";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $test_brand->addStore($test_store);
+
+            $this->assertEquals($test_brand->getStores(), [$test_store]);
+        }
+
+        function test_getStores(){
+            $brand_name = "Nike";
+            $id = 1;
+            $test_brand = new Brand($brand_name, $id);
+            $test_brand->save();
+
+            $store_name = "Foot Locker";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "KOHLs";
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            $test_brand->addStore($test_store);
+            $test_brand->addStore($test_store2);
+
+            $this->assertEquals($test_brand->getStores(), [$test_store, $test_store2]);
+        }
     }
 ?>
