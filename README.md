@@ -13,7 +13,10 @@ It was built using the following:
 
 ***
 ## MySQL Commands:
-1. 
+1. Use `/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot` to access the MySQL Shell.
+2. `CREATE DATABASE shoes;`
+3. `USE shoes;`
+4. ``
 
 ***
 ## Installation:
