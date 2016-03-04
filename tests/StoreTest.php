@@ -77,5 +77,17 @@
 
             $this->assertEquals([$test_store2], $result);
         }
+
+        function test_update(){
+            $store_name = "Foot Locker";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $new_name = "KOHLs";
+
+            $test_store->update($new_name);
+
+            $this->assertEquals($new_name, $test_store->getName());
+        }
     }
 ?>
