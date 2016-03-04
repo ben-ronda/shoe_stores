@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shoe Stores</title>
+    </head>
+    <body>
+        <h1>Shoe Stores</h1>
+        <h3><a href="/add_brand">Click Here to Add Brands!</a></h3>
+        <h3><a href="/add_store">Click Here to Add Stores!</a></h3>
+
+
+        {% if brands is not empty %}
+        <ul>
+            {% for brand in brands %}
+                <li><a href="/brands/{{ brand.getId }}">{{ brand.getName }}</a></li>;
+            {% endfor %}
+        </ul>
+        {% else %}
+        <h4>There are no brands to view</h4>
+        {% endif %}
+
+        {% if stores is not empty %}
+        <ul>
+            {% for store in stores %}
+                <li><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <h4>There are no Stores to view</h4>
+        {% endif %}
+    </body>
+</html>
