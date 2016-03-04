@@ -29,6 +29,14 @@
             $this->assertEquals($store_name, $result);
         }
 
-        
+        function test_getId(){
+            $store_name = "Foot Locker";
+            $id = 1;
+            $test_store = new Store($store_name, $id);
+
+            $result = $test_store->getId();
+
+            $this->assertEquals($id, $result);
+        }
     }
 ?>
