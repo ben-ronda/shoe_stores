@@ -63,5 +63,22 @@
 
             $this->assertEquals([$test_brand, $test_brand2], $result);
         }
+
+        // function test_getStores(){
+        //     $brand_name = "Nike";
+        //     $test_brand = new Brand($brand_name);
+        //     $test_brand->save();
+        //
+        //     $store_name = "Foot Locker";
+        //     $test_store = new Store($store_name);
+        //     $test_store->save();
+        //
+        //     $store_name2 = "KOHLs";
+        //     $test_store2 = new Store($store_name2);
+        //     $test_store2->save();
+        //
+        //
+        //
+        // }
     }
 ?>
