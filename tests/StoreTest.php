@@ -72,7 +72,10 @@
             $test_store2 = new Store($store_name2);
             $test_store2->save();
 
-            $result = $test_store->delete();
+            $test_store->delete();
+            $result = Store::getAll();
+
+            $this->assertEquals([$test_store2], $result);
         }
     }
 ?>

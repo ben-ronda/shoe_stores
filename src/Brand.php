@@ -27,6 +27,10 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
+        function delete(){
+            $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
+        }
+
         static function getAll(){
             $returned_brands = $GLOBALS['DB']->query("SELECT * FROM brands;");
             $brands = array();
