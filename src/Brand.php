@@ -31,6 +31,11 @@
             $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
         }
 
+        function update($new_name){
+            $GLOBALS['DB']->exec("UPDATE brands SET name = '{$new_name}' WHERE id = {$this->getId()};");
+            $this->setName($new_name);
+        }
+
         static function getAll(){
             $returned_brands = $GLOBALS['DB']->query("SELECT * FROM brands;");
             $brands = array();

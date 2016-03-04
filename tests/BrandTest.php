@@ -77,7 +77,18 @@
             $result = Brand::getAll();
 
             $this->assertEquals([$test_brand2], $result);
+        }
 
+        function test_update(){
+            $brand_name = "Nike";
+            $test_brand = new Brand($brand_name);
+            $test_brand->save();
+
+            $new_name = "Adidas";
+
+            $test_brand->update($new_name);
+
+            $this->assertEquals($new_name, $test_brand->getName());
         }
 
         // function test_getStores(){
