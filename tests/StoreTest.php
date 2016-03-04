@@ -48,5 +48,31 @@
 
             $this->assertEquals([$test_store], $result);
         }
+
+        function test_getAll(){
+            $store_name = "Foot Locker";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "KOHls";
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            $result = Store::getAll();
+
+            $this->assertEquals([$test_store, $test_store2], $result);
+        }
+
+        function test_delete(){
+            $store_name = "Foot Locker";
+            $test_store = new Store($store_name);
+            $test_store->save();
+
+            $store_name2 = "KOHls";
+            $test_store2 = new Store($store_name2);
+            $test_store2->save();
+
+            $result = $test_store->delete();
+        }
     }
 ?>

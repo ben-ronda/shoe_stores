@@ -34,7 +34,7 @@
                 $name = $brand['name'];
                 $id = $brand['id'];
                 $new_brand = new Brand($name, $id);
-                
+
                 array_push($brands, $new_brand);
             }
             return $brands;
