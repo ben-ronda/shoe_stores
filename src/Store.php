@@ -38,6 +38,10 @@
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$new_brand->getId()}, {$this->getId()});");
         }
 
+        function find($search_id){
+            
+        }
+
         function getBrands(){
             $returned_brands = $GLOBALS['DB']->query("SELECT brands.* FROM stores
                 JOIN brands_stores ON (stores.id = brands_stores.store_id)
