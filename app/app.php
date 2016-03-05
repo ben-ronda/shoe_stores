@@ -42,5 +42,10 @@
         return $app['twig']->render('add_store.html.twig', array('stores' => Store::getAll()));
     });
 
+    $app->get('/brands/{id}', function($id) use ($app){
+        $store = Store::find($id);
+        return $app['twig']->render('brands.html.twig', array('brand' => $brand))
+    });
+
     return $app;
 ?>
