@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shoe Stores</title>
+    </head>
+    <body>
+        <h3>Add a Store:</h3>
+        <form action="/added_stores" method="post">
+            <label for="store_name">Name:</label>
+            <input type="text" id="store_name" name="store_name">
+
+            <button type="submit">Add Brand</button>
+        </form>
+
+        {% if stores is not empty %}
+        <h4>Here are the stores:</h4>
+        <ul>
+            {% for store in stores %}
+                <li><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <h4>There are no Stores to view</h4>
+        {% endif %}
+
+    </body>
+</html>

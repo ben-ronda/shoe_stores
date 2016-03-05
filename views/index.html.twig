@@ -10,16 +10,18 @@
 
 
         {% if brands is not empty %}
+        <h4>Here are the Brands:</h4>
         <ul>
             {% for brand in brands %}
-                <li><a href="/brands/{{ brand.getId }}">{{ brand.getName }}</a></li>;
+                <li><a href="/brands/{{ brand.getId }}">{{ brand.getName }}</a></li>
             {% endfor %}
         </ul>
         {% else %}
-        <h4>There are no brands to view</h4>
+        <h4>There are no Brands to view</h4>
         {% endif %}
 
         {% if stores is not empty %}
+        <h4>Here are the Stores:</h4>
         <ul>
             {% for store in stores %}
                 <li><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></li>
