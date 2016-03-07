@@ -38,8 +38,17 @@
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$new_brand->getId()}, {$this->getId()});");
         }
 
-        function find($search_id){
-            
+        static function find($search_id){
+            $found_store = null;
+            $stores = Store::getAll();
+            foreach($stores as $store){
+                $store_id = $store->getId();
+                if($search_id == $store_id){
+                    $found_store = $store;
+                }
+            }
+            return $found_store;
+
         }
 
         function getBrands(){
