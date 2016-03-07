@@ -48,7 +48,6 @@
                 }
             }
             return $found_store;
-
         }
 
         function getBrands(){

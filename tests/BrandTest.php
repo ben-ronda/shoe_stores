@@ -124,5 +124,21 @@
 
             $this->assertEquals($test_brand->getStores(), [$test_store, $test_store2]);
         }
+
+        function test_find(){
+            $brand_name = "Nike";
+            $id = 1;
+            $test_brand = new Brand($brand_name, $id);
+            $test_brand->save();
+
+            $brand_name2 = "New Balance";
+            $id2 = 2;
+            $test_brand2 = new Brand($brand_name2, $id2);
+            $test_brand2->save();
+
+            $result = Brand::find($test_brand->getId());
+
+            $this->assertEquals($test_brand, $result);
+        }
     }
 ?>
