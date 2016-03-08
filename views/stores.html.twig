@@ -15,11 +15,19 @@
             </ul>
         {% endif %}
 
-        <form action="/store_brands" method="post">
-            <input type="hidden" id="store_id" name="store_id" value="{{ store.getId }}">
-            <label for="brand_id">Select a Brand:</label>
+        <form action="/brand/{{ brand.getId }}" method="post">
+            <input type="hidden" id="brand_id" name="brand_id" value="{{ store.getId }}">
+            <label for="store_id">Select a Store:</label>
+            <select name="store_id">
+                {% for store in all_stores %}
+                    <option value="{{ store.getId }}">{{ store.getName }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Add Stores</button>
+        </form>
 
-            <button type="submit">Add Brands</button>
+        <form action="/">
+            <button type="submit" name="button">Home</button>
         </form>
     </body>
 </html>

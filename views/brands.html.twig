@@ -17,11 +17,19 @@
         <h4>There are no Brands to view</h4>
         {% endif %}
 
-        <form action="/store_brands" method="post">
+        <form action="/store/{{ store.getId }}" method="post">
             <input type="hidden" id="store_id" name="store_id" value="{{ store.getId }}">
             <label for="brand_id">Select a Brand:</label>
-
+            <select name="brand_id">
+                {% for brand in all_brands %}
+                    <option value="{{ brand.getId }}">{{ brand.getName }}</option>
+                {% endfor %}
+            </select>
             <button type="submit">Add Brands</button>
+        </form>
+
+        <form action="/">
+            <button type="submit" name="button">Home</button>
         </form>
     </body>
 </html>
