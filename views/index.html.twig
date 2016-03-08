@@ -13,7 +13,7 @@
         <h4>Here are the Brands:</h4>
         <ul>
             {% for brand in brands %}
-                <li><a href="/brands/{{ brand.getId }}">{{ brand.getName }}</a></li>
+                <li><a href="/brand/{{ brand.getId }}">{{ brand.getName }}</a></li>
             {% endfor %}
         </ul>
         {% else %}
@@ -24,7 +24,7 @@
         <h4>Here are the Stores:</h4>
         <ul>
             {% for store in stores %}
-                <li><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></li>
+                <li><a href="/store/{{ store.getId }}">{{ store.getName }}</a></li>
             {% endfor %}
         </ul>
         {% else %}

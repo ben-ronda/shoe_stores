@@ -42,7 +42,12 @@
         return $app['twig']->render('add_store.html.twig', array('stores' => Store::getAll()));
     });
 
-    $app->get('/brands/{id}', function($id) use ($app){
+    $app->get('/brand/{id}', function($id) use ($app){
+        $brand = Brand::find($id);
+        return $app['twig']->render('stores.html.twig', array('brand' => $brand, 'stores' => $brand->getStores()));
+    });
+
+    $app->get('/store/{id}', function($id) use ($app){
         $store = Store::find($id);
         return $app['twig']->render('brands.html.twig', array('store' => $store, 'brands' => $store->getBrands()));
     });
