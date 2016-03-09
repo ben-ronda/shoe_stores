@@ -29,5 +29,10 @@
         <form action="/">
             <button type="submit" name="button">Home</button>
         </form>
+
+        <form action="/delete_brand/{{ brand.getId }}" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <button type='submit'>Delete Brand</button>
+        </form>
     </body>
 </html>

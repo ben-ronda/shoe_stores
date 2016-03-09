@@ -31,5 +31,12 @@
         <form action="/">
             <button type="submit" name="button">Home</button>
         </form>
+
+        <form action='/delete_store/{{ store.getId }}' method='post'>
+            <input name="_method" type="hidden" value="delete">
+            <button type='submit'>Delete Store</button>
+        </form>
+
+
     </body>
 </html>
