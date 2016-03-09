@@ -30,5 +30,14 @@
         {% else %}
             <h4>There are no Stores to view</h4>
         {% endif %}
+
+
+        <form action="/delete_all_brands" method="post">
+            <button type="submit">Delete Brands</button>
+        </form>
+
+        <form action="/delete_all_stores" method="post">
+            <button type="submit">Delete Stores</button>
+        </form>
     </body>
 </html>

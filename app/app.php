@@ -28,6 +28,16 @@
         return $app['twig']->render('index.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::getAll()));
     });
 
+    $app->post('/delete_all_brands', function() use ($app){
+        Brand::deleteAll();
+        return $app['twig']->render('index.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::getAll()));
+    });
+
+    $app->post('/delete_all_stores', function() use ($app){
+        Store::deleteAll();
+        return $app['twig']->render('index.html.twig', array('brands' => Brand::getAll(), 'stores' => Store::getAll()));
+    });
+
     $app->post("/added_stores", function() use ($app){
         $new_store = new Store($_POST['store_name']);
         $new_store->save();
